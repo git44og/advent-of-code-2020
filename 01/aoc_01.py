@@ -1,3 +1,4 @@
+from functools import reduce
 
 
 def list_from_file(input_file):
@@ -5,18 +6,8 @@ def list_from_file(input_file):
 	return list(map(lambda x: int(x), f.read().split("\n")))
 
 
-def add_all(list):
-	r = 0
-	for a in list:
-		r += a
-	return r
-
-
-def mult_all(list):
-	r = 1
-	for p in list:
-		r *= p
-	return r
+def mult_all(list1):
+	return reduce((lambda x, y: x * y), list1)
 
 
 def sub_sum(max_tuple, input_list, index_list=[], current_sum=0):
@@ -42,6 +33,7 @@ def find_tuple(input_list, tuple_size):
 def product_of_tuple(input_file, tuple_size):
 	list = list_from_file(input_file)
 	pair = find_tuple(list, tuple_size)
+	
 	return mult_all(pair)
     
 
