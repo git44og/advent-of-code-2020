@@ -23,7 +23,6 @@ def test_answer_1(test_input, slope, expected):
 
 @pytest.mark.parametrize("test_input, expected", [("source_01.txt", 336)])
 def test_answer_2(test_input, expected):
-	slopes = [[1,1], [3,1], [5,1], [7,1], [1,2]]
-	assert answer_2(test_input, slopes) == expected
+	assert answer_2(test_input) == expected
 
 
